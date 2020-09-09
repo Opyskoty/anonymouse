@@ -17,7 +17,7 @@ function PostCard({ post }) {
           <CardTitle>
             <h3>{post.title}</h3>
           </CardTitle>
-          <CardText>{post.post}</CardText>
+          <CardText>{post.description}</CardText>
           <CardFooter>
             <Button color="info">Add Comment</Button>
           </CardFooter>

@@ -1,16 +1,16 @@
-import React from "react";
-import DefaultPosts from "./DefaultPosts";
+import React, { useState } from "react";
+// import DefaultPosts from "./DefaultPosts";
 import PostCard from "./PostCard";
-import { Row, Col } from "reactstrap";
+import { Row } from "reactstrap";
 
-
-function PostList() {
+function PostList({ posts }) {
   return (
     <div className="PostList">
       <Row>
-        {DefaultPosts.map( p => (<PostCard post={p} key={p.title} />))}
+        {posts.map((p) => (
+          <PostCard post={p} key={p.title} />
+        ))}
       </Row>
-
     </div>
   );
 }

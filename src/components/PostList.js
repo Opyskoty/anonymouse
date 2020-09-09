@@ -8,7 +8,7 @@ function PostList({ posts }) {
     <div className="PostList">
       <Row>
         {posts.map((p) => (
-          <PostCard post={p} key={p.title} />
+          <PostCard post={p} key={p.id} />
         ))}
       </Row>
     </div>

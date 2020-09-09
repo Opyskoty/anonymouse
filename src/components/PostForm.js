@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Button, Form, FormGroup, Input, Label, Col } from "reactstrap";
+import { v4 as uuidv4 } from "uuid";
 
 const INITIAL_STATE = { title: "", description: "" };
 
-function PostForm({posts, setPosts}) {
+function PostForm({ posts, setPosts }) {
   const [formData, setFormData] = useState(INITIAL_STATE);
-
 
   const handleChange = (evt) => {
     const { name, value } = evt.target;
@@ -14,7 +14,7 @@ function PostForm({posts, setPosts}) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    setPosts([...posts, {...formData}]);
+    setPosts([...posts, { ...formData, id: uuidv4() }]);
     setFormData(INITIAL_STATE);
   };
 

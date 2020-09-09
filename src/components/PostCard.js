@@ -6,8 +6,9 @@ import {
   CardText,
   CardFooter,
   Button,
-  Col,
+  Col
 } from "reactstrap";
+import CommentList from "./CommentList";
 
 function PostCard({ post }) {
   return (
@@ -18,6 +19,8 @@ function PostCard({ post }) {
             <h3>{post.title}</h3>
           </CardTitle>
           <CardText>{post.description}</CardText>
+          <h5>Comments: </h5>
+          <CommentList comments={post.comments} />
           <CardFooter>
             <Button color="info">Add Comment</Button>
           </CardFooter>

@@ -12,7 +12,7 @@ import {
 import CommentList from "./CommentList";
 import CommentForm from "./CommentForm";
 
-function PostCard({ post, deletePost }) {
+function PostCard({ post, posts, deletePost, setPosts }) {
   const [flagged, setFlagged] = useState(false);
 
   return (
@@ -50,7 +50,11 @@ function PostCard({ post, deletePost }) {
           <h5 className="text-left">Comments: </h5>
           <CommentList comments={post.comments} />
           <CardFooter>
-            <CommentForm />
+            <CommentForm
+              post={post}
+              posts={posts}
+              setPosts={setPosts}
+            />
           </CardFooter>
         </CardBody>
       </Card>

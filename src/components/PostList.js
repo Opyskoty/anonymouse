@@ -4,9 +4,10 @@ import { Row, Col } from "reactstrap";
 import { HotKeys } from "react-hotkeys";
 
 function PostList({ posts, setPosts }) {
+
   const deletePost = (postId) => {
     const updatedPosts = posts.filter((p) => p.id !== postId);
-    setPosts(updatedPosts);
+    setPosts([...updatedPosts]);
   };
 
   return (

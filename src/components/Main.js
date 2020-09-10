@@ -27,7 +27,7 @@ function Main() {
           <PostForm posts={posts} setPosts={setPosts}/>
         </div>
       </Jumbotron>
-      <PostList posts={posts}/>
+      <PostList posts={posts} setPosts={setPosts}/>
     </>
   );
 }

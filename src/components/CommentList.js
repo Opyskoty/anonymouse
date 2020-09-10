@@ -5,7 +5,7 @@ function CommentList({ comments }) {
   return (
     <ListGroup className="CommentList">
       {comments.map((c) => (
-        <ListGroupItem>{c.text}</ListGroupItem>
+        <ListGroupItem className="text-left" key={c.id}>&#8226; {c.text}</ListGroupItem>
       ))}
     </ListGroup>
   );

@@ -1,14 +1,31 @@
 import React from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
+import Comment from "./Comment";
+import { HotKeys } from "react-hotkeys";
 
-function CommentList({ comments }) {
+function CommentList({ post, posts, setPosts }) {
+
+  const deleteComment = (commentId) => {
+    const updatedComments = post.comments.filter((c) => c.id !== commentId);
+
+    for (let i = 0; i < posts.length; i++) {
+      if (posts[i].id === post.id) {
+        posts[i].comments = [...updatedComments];
+      }
+    }
+    let updatedPosts = [...posts];
+    setPosts(updatedPosts);
+  };
+
   return (
     <ListGroup className="CommentList">
-      {comments &&
-        comments.map((c) => (
-          <ListGroupItem className="text-left" key={c.id}>
-            &#8226; {c.comment}
-          </ListGroupItem>
+      {post.comments &&
+        post.comments.map((c) => (
+          <HotKeys handlers={{ DELETE: () => deleteComment(c.id) }} key={c.id}>
+            <ListGroupItem className="text-left" key={c.id}>
+              <Comment comment={c} deleteComment={deleteComment} />
+            </ListGroupItem>
+          </HotKeys>
         ))}
     </ListGroup>
   );

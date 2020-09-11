@@ -16,12 +16,13 @@ function CommentForm({ post, posts, setPosts }) {
     evt.preventDefault();
     for (let i = 0; i < posts.length; i++) {
       if (posts[i].id === post.id) {
-        posts[i].comments = [...posts[i].comments, { ...formData, id: uuidv4() }];
+        posts[i].comments = posts[i].comments
+          ? [...posts[i].comments, { ...formData, id: uuidv4() }]
+          : [{ ...formData, id: uuidv4() }];
       }
     }
     let updatedPosts = [...posts];
 
-    // posts.filter((p) => p.id !== post.id);
     setPosts([...updatedPosts]);
     setFormData(INITIAL_STATE);
   };
@@ -41,7 +42,7 @@ function CommentForm({ post, posts, setPosts }) {
             onChange={handleChange}
           />
         </FormGroup>
-        <Button>Add Comment</Button>
+        <Button className="mt-2">Add Comment</Button>
       </Form>
     </>
   );

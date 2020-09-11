@@ -23,7 +23,7 @@ function PostCard({ post, posts, deletePost, setPosts }) {
             size="sm"
             color="danger"
             className="float-left"
-            onClick={() => setFlagged(true)}
+            onClick={() => setFlagged(!flagged)}
           >
             Flag As Cat
           </Button>
@@ -48,7 +48,7 @@ function PostCard({ post, posts, deletePost, setPosts }) {
           </CardTitle>
           <CardText>{post.description}</CardText>
           <h5 className="text-left">Comments: </h5>
-          <CommentList comments={post.comments} />
+          <CommentList post={post} posts={posts} setPosts={setPosts}/>
           <CardFooter>
             <CommentForm
               post={post}

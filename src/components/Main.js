@@ -5,12 +5,14 @@ import { faBan, faCat } from "@fortawesome/free-solid-svg-icons";
 import PostList from "./PostList";
 import PostForm from "./PostForm";
 import DefaultPosts from "./DefaultPosts";
+import "./Main.css"
+
 
 function Main() {
   const [posts, setPosts] = useState(DefaultPosts);
   return (
     <>
-      <Jumbotron>
+      <Jumbotron className="jumbo">
         <h1>AnonyMouse</h1>
         <p>
           <em>

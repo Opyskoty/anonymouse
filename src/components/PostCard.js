@@ -18,7 +18,7 @@ function PostCard({ post, posts, deletePost, setPosts }) {
   return (
     <>
       <Card className="PostCard mb-3">
-        <CardHeader>
+        <CardHeader className="ch">
           <Button
             size="sm"
             color="danger"
@@ -49,7 +49,7 @@ function PostCard({ post, posts, deletePost, setPosts }) {
           <CardText>{post.description}</CardText>
           <h5 className="text-left">Comments: </h5>
           <CommentList post={post} posts={posts} setPosts={setPosts}/>
-          <CardFooter>
+          <CardFooter className="cf">
             <CommentForm
               post={post}
               posts={posts}

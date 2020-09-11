@@ -1,13 +1,12 @@
 import React from "react";
 import "./Home.css";
-import { Container } from "reactstrap";
 
 function Home() {
   return (
-    <Container className="container">
-      <h1>Anonymouse</h1>
+    <div className="wrapper">
+      <h1 className="mt-1 pt-4">Anonymouse</h1>
       <div className="about">
-        <h3 className="header">About</h3>
+        <h3 className="header mt-5 ml-1">About</h3>
         <p>
           Started by three visually impaired mice, Anonymouse is the first
           online forum where mice can come and safely chat with one another
@@ -21,23 +20,24 @@ function Home() {
         </p>
       </div>
       <div className="use">
-        <h3 className="header">How to Use Anonymouse</h3>
+        <h3 className="header mt-5 ml-1">How to Use Anonymouse</h3>
         <p>
           This entire app is 100% functional without having to use a mouse! If
           you prefer to click, be our guest, but for those that are reliant on a
           keyboard, please use the following shortcuts:</p>
           <ul>
-            <li>Tab to move down the page between buttons and links</li>
-            <li>Shift+Tab to move up the page between buttons and links</li>
-            <li>Enter OR Return to click on all buttons</li>
-            <li>Delete OR Backspace to remove posts and comments</li>
+            <li><u>Tab</u> to move down the page between buttons and links</li>
+            <li><u>Shift+Tab</u> to move up the page between buttons and links</li>
+            <li><u>Enter OR Return</u> to click on all buttons</li>
+            <li><u>Delete OR Backspace</u> to remove posts and comments</li>
           </ul>
+          <p><small>Note: this app does not utilize a backend, so nothing you write will be saved (:</small></p>
       </div>
       <div className="tech">
-        <h3 className="header">Technologies Used</h3>
+        <h3 className="header mt-5 ml-1">Technologies Used</h3>
         <p>This app was built mainly using React and React HotKeys.</p>
       </div>
-    </Container>
+    </div>
   );
 }
 

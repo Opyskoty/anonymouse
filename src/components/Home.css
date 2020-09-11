@@ -1,5 +1,15 @@
+.wrapper {
+  background-color: #f3d9ce;
+  height: 100vh;
+  border-radius: 2em;
+}
+
 h3, li {
   text-align: left !important;
+}
+
+h1, h3 {
+  color: #00aeef;
 }
 
 .header {

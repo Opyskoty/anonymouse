@@ -1,9 +1,18 @@
 import React from "react";
+import { Button } from "reactstrap";
 
-function Comment({ comment }) {
+function Comment({ comment, deleteComment }) {
   return (
     <div className="Comment">
-      <p>{comment.text}</p>
+      &#8226; {comment.comment}
+      <Button
+        size="sm"
+        color="danger"
+        className="float-right"
+        onClick={() => deleteComment(comment.id)}
+      >
+        X
+      </Button>
     </div>
   );
 }

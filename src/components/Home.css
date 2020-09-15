@@ -2,6 +2,7 @@
   background-color: #f3d9ce;
   height: 100vh;
   border-radius: 2em;
+  overflow: auto;
 }
 
 h3, li {
